@@ -140,6 +140,12 @@ class ruby (
                 warning('Packages for Ruby 2.1 are not available from default repositories.')
               }
             }
+            /^2\.2.*$/:{
+              $real_ruby_package  = "${ruby::params::ruby_package}2.2"
+              if ! $suppress_warnings {
+                warning('Packages for Ruby 2.2 are not available from default repositories.')
+              }
+            }
             default: {
               $real_ruby_package  = $ruby_package
             }
