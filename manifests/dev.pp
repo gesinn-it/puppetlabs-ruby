@@ -85,6 +85,13 @@ class ruby::dev (
               'pkg-config'
             ]
           }
+          /^2\.2.*$/:{
+            $ruby_dev = [
+              'ruby2.2-dev',
+              'ri',
+              'pkg-config'
+            ]
+          }          
           default: {
             $ruby_dev = $::ruby::params::ruby_dev
           }
