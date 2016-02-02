@@ -228,6 +228,12 @@ class ruby (
                 warning('No binary for Ruby 2.1.x available from default repositories')
               }
             }
+            /^2\.2.*$/:{
+              $real_default_bin  = "${ruby::params::ruby_bin_base}2.2"
+              if ! $suppress_warnings {
+                warning('No binary for Ruby 2.2.x available from default repositories')
+              }
+            }            
             default: {
               fail('Unable to resolve default ruby binary')
             }
@@ -258,6 +264,12 @@ class ruby (
                 warning('No binary package for Ruby 2.1.x available from default repositories')
               }
             }
+            /^2\.2.*$/:{
+              $real_default_gem  = "${ruby::params::ruby_gem_base}2.2"
+              if ! $suppress_warnings {
+                warning('No binary package for Ruby 2.2.x available from default repositories')
+              }
+            }            
             default: {
               fail('Unable to resolve default gem binary')
             }
